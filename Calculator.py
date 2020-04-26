@@ -3,76 +3,177 @@ import math
 e = math.e
 pi = math.pi
 
+def add(a,b):
+    result = a + b
+    return result
+
+def subtract(a,b):
+    result = a - b
+    return result
+
+def multiply(a,b):
+    result = a * b
+    return result
+
+def divide(a,b):
+    if(b == 0):
+        print("cannot divide by 0")
+    else:
+        result = a / b
+        return result
+
+def log(a,b):
+    base = b
+    result = math.log(a, base)
+    return result
+
+def power_of_y(a,b):
+    result = a ** b
+    return result
+
+def log2(a):
+    result = math.log2(a)
+    return result
+
+def log10(a):
+    result = math.log10(a)
+    return result
+
+def ln(a):
+    result = math.log(a)
+    return result
+
+def squared(a):
+    result = a ** 2
+    return result
+
+def cubed(a):
+    result = a ** 3
+    return result
+
+def sqrt(a):
+    result = a ** 0.5
+    return result
+
+def sin(a):
+    inputType = input("value in degrees or radians?")
+
+    if (inputType == "degrees"):
+        a = math.radians(a)
+
+    result = math.sin(a)
+
+    return result
+
+def cos(a):
+    inputType = input("value in degrees or radians?")
+
+    if (inputType == "degrees"):
+        a = math.radians(a)
+
+    result = math.cos(a)
+
+    return result
+
+def tan(a):
+    inputType = input("value in degrees or radians?")
+
+    if (inputType == "degrees"):
+        if(a == 90 or a == 270):
+            print("error")
+        else:
+            a = math.radians(a)
+
+    if (inputType == "radians"):
+        if(a == pi/2 or pi == 3*pi/2):
+            print("error")
+
+    else:
+        result = math.tan(a)
+        return result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def calculate (num1, num2, op):
     if (op == "+"):
-        result = num1 + num2
+        return add(num1, num2)
 
     elif (op == "-"):
-        result = num1 - num2
+        return subtract(num1, num2)
 
     elif (op == "x"):
-        result = num1 * num2
+        return multiply(num1, num2)
 
     elif (op == "/"):
-        result = num1 / num2
+        return divide(num1, num2)
 
     elif (op == "log"):
-        base = num2
-        result = math.log(num1, base)
+        return log(num1, num2)
 
     elif (op == "^y"):
-        result = num1 ** num2
+        return power_of_y(num1, num2)
 
-    print(result)
+
+
+
+
+
+
+
+
+
+
+
 
 def calculate2 (op, val):
 
     if (op == "log2"):
-        result = math.log2(val)
+        return log2(val)
 
     elif (op == "log10"):
-        result = math.log10(val)
+        return log10(val)
 
     elif (op == "ln"):
-        result = math.log(val)
+        return ln(val)
 
     elif (op == "^2"):
-        result = val ** 2
+        return squared(val)
 
     elif (op == "^3"):
-        result = val ** 3
+        return cubed(val)
 
     elif (op == "sqrt"):
-        result = math.sqrt(val)
+        return sqrt(val)
 
     elif (op == "sin"):
-        inputType = input("value in degrees or radians?")
-
-        if (inputType == "degrees"):
-            val = math.radians(val)
-
-        result = math.sin(val)
+        return sin(val)
 
     elif (op == "cos"):
-        inputType = input("value in degrees or radians?")
-
-        if (inputType == "degrees"):
-            val = math.radians(val)
-
-        result = math.cos(val)
+        return cos(val)
 
     elif (op == "tan"):
-        inputType = input("value in degrees or radians?")
-
-        if (inputType == "degrees"):
-            if(val == 90 or val == 270):
-                print("error")
-            else:
-                val = math.radians(val)
-
-        result = math.tan(val)
+        return tan(val)
 
     else:
-        print("error")
+        print("error, enter different input")
 
-    print(result)
+
+
+
+print(calculate2("tan", pi/2))
